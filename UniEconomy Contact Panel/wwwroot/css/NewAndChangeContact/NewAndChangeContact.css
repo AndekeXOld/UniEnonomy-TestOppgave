@@ -1,0 +1,36 @@
+﻿.InputPanel {
+    float: left;
+    padding: 20px;
+    width:400px;
+    padding-bottom: 100px;
+}
+
+
+.InputLine {
+    display: flex;
+}
+
+.InputLine-Label {
+    width: 100px;
+    text-align: right;
+}
+
+.InputLine-Input {
+    padding-left: 10px;
+}
+
+.InputPanel-Actions {
+    padding;
+    40px;
+    position: absolute;
+    bottom: 0;
+}
+
+.InputPanel-Actions-Buttons {
+    padding: 20px;
+}
+
+.ActionPanel {
+    overflow: auto;
+}
+

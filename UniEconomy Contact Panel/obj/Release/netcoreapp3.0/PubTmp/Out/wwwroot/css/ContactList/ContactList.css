@@ -1,0 +1,65 @@
+﻿.ContactItem {
+    padding: 3px;
+}
+
+
+.ContactList {
+    overflow: auto;
+    height: 700px;
+    width: 250px;
+    padding: 10px;
+}
+
+    .ContactList::-webkit-scrollbar {
+        display: none;
+    }
+
+.ContactList_contactMain {
+    width: 200px;
+    border-radius: 25px;
+    padding-bottom: 5px;
+}
+
+    .ContactList_contactMain:hover {
+        background: #1A73D9;
+        cursor: pointer;
+    }
+
+.ContactList_contactNew {
+    width: 200px;
+    border-radius: 25px;
+    padding-bottom: 5px;
+}
+
+    .ContactList_contactNew:hover {
+        background: #1A73D9;
+        cursor: pointer;
+    }
+
+        /*.ContactList_contactMain:hover .ContactImg {
+            content: url("https://image.flaticon.com/icons/svg/61/61140.svg");
+            height: 20px;
+            padding-top: 5px;
+        }*/
+
+.ContactList_contactImg {
+    float: left;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+}
+
+.ContactImg {
+    height: 30px;
+}
+
+.ContactList_contactName {
+    height: 30px;
+    width: 100%;
+    text-align: left;
+}
+
+.ContactList_contactNam, p {
+    line-height: 30px;
+    padding-left: 40px;
+}

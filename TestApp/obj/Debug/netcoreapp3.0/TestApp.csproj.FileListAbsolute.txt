@@ -1,0 +1,17 @@
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\TestApp.exe
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\TestApp.deps.json
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\TestApp.runtimeconfig.json
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\TestApp.runtimeconfig.dev.json
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\TestApp.dll
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\TestApp.pdb
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\Newtonsoft.Json.dll
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\UniModules.dll
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\UniModules.pdb
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\obj\Debug\netcoreapp3.0\TestApp.csprojAssemblyReference.cache
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\obj\Debug\netcoreapp3.0\TestApp.AssemblyInfoInputs.cache
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\obj\Debug\netcoreapp3.0\TestApp.AssemblyInfo.cs
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\obj\Debug\netcoreapp3.0\TestApp.csproj.CopyComplete
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\obj\Debug\netcoreapp3.0\TestApp.dll
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\obj\Debug\netcoreapp3.0\TestApp.pdb
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\UniEconomyAPI.dll
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\TestApp\bin\Debug\netcoreapp3.0\UniEconomyAPI.pdb

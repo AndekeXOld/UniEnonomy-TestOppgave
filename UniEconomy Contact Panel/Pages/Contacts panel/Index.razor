@@ -1,0 +1,65 @@
+﻿@page "/Contacts"
+
+@code {
+
+    public List<UniModules.Contact> AllContacts { get; set; } = new UniEconomyAPI.UniEconomyAPIRequest(Session.AccessTokens).Modules.Contacts.GetAll().ToList();
+
+    void UpdateContactList()
+    {
+        AllContacts = new UniEconomyAPI.UniEconomyAPIRequest(Session.AccessTokens).Modules.Contacts.GetAll().ToList();
+    }
+
+
+    public string Action { get; set; }
+
+    void SetAction(string Arg_Action)
+    {
+        Action = Arg_Action;
+    }
+
+
+    public UniModules.Contact SelectedContact { get; set; } = null;
+
+    void SelectNewContact(UniModules.Contact Arg_Contact)
+    {
+        SelectedContact = Arg_Contact;
+        Action = "View";
+    }
+
+
+    void CreateContact(UniModules.Contact Arg_Contact)
+    {
+        SelectedContact = new UniEconomyAPI.UniEconomyAPIRequest(Session.AccessTokens).Modules.Contacts.New(Arg_Contact);
+        UpdateContactList();
+        Action = "View";
+
+    }
+
+    void ChangeContact(UniModules.Contact Arg_Contact)
+    {
+        if(new UniEconomyAPI.UniEconomyAPIRequest(Session.AccessTokens).Modules.Contacts.Update(Arg_Contact).ID == Arg_Contact.ID)
+        {
+            UpdateContactList();
+            Action = "View";
+        }
+    }
+
+    void DeleteContact(UniModules.Contact Arg_Contact)
+    {
+        if(new UniEconomyAPI.UniEconomyAPIRequest(Session.AccessTokens).Modules.Contacts.Delete(Arg_Contact.ID))
+        {
+            UpdateContactList();
+            SelectedContact = null;
+        }
+    }
+}
+
+    <h2><i class="material-icons left">supervisor_account</i>Uni Economy Contacts</h2>
+    <div style="display:flex;">        
+        <div style="display:flex;">
+            <ContactList Arg_AllContacts="AllContacts" OnSelected_Contact="SelectNewContact" OnSelect_NewContact="SetAction"></ContactList>
+        </div>        
+        <div style="display:flex; width:100%; padding-left:20px;">
+            <ActionPanel SelectedContact="SelectedContact" Action="@Action" OnNewContact="CreateContact" OnChangeContact="ChangeContact" OnDeleteContact="DeleteContact"></ActionPanel>
+        </div>
+    </div>

@@ -1,0 +1,39 @@
+﻿
+@code {
+    [Parameter]
+    public List<UniModules.Contact> Arg_AllContacts { get; set; }
+
+    [Parameter] 
+    public EventCallback<UniModules.Contact> OnSelected_Contact { get; set; }
+
+    [Parameter] 
+    public EventCallback<string> OnSelect_NewContact { get; set; }
+}
+
+    <div class="ContactList z-depth-3">
+
+        <div class="ContactItem" @onclick="@(() => OnSelect_NewContact.InvokeAsync("New"))">
+            <div class="ContactList_contactNew">
+                <div class="ContactList_contactImg">
+                    <img class="ContactImg" src="https://cdn1.iconfinder.com/data/icons/color-bold-style/21/04-512.png" />
+                </div>
+                <div class="ContactList_contactName">
+                    <p>New Contact</p>
+                </div>
+            </div>
+        </div>
+        <hr>
+        @foreach (UniModules.Contact contact in Arg_AllContacts)
+        {
+            <div class="ContactItem" @onclick="@(() => OnSelected_Contact.InvokeAsync(contact))">
+                <div class="ContactList_contactMain">
+                    <div class="ContactList_contactImg">
+                        <img class="ContactImg" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Google_Contacts_icon.svg" />
+                    </div>
+                    <div class="ContactList_contactName">
+                        <p>@contact.Info.Name</p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

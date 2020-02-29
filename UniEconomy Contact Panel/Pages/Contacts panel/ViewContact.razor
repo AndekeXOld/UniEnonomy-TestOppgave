@@ -1,0 +1,184 @@
+﻿
+@code{
+    [Parameter]
+    public UniModules.Contact contact { get; set; }
+
+    [Parameter]
+    public EventCallback<UniModules.Contact> OnDelete { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnChange { get; set; }
+}
+
+        @if (contact != null)
+        {
+            <div class="InputPanel">
+                <div class="InputSection">
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                        </div>
+                        <div class="InputLine-Input">
+                            <h5>Person info</h5>
+                        </div>
+                    </div>
+
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Name: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.Name</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Role: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Role</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="InputSection">
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                        </div>
+                        <div class="InputLine-Input">
+                            <h5>Contact Info</h5>
+                        </div>
+                    </div>
+
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Email: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.DefaultEmail.EmailAddress</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Description: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.DefaultEmail.Description</b>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="InputSection">
+                    <br>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Phone number: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.DefaultPhone.Number</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Country Code: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.DefaultPhone.CountryCode</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Description: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.DefaultPhone.Description</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="InputPanel">
+                <div class="InputSection">
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                        </div>
+                        <div class="InputLine-Input">
+                            <h5>Invoice Addresse</h5>
+                        </div>
+                    </div>
+
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Address Line 1: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.InvoiceAddress.AddressLine1</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Address Line 2: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.InvoiceAddress.AddressLine2</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Address Line 3: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.InvoiceAddress.AddressLine3</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Postal Code: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.InvoiceAddress.PostalCode</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>City: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.InvoiceAddress.City</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Country: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.InvoiceAddress.Country</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Country Code: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.InvoiceAddress.CountryCode</b>
+                        </div>
+                    </div>
+                    <div class="InputLine">
+                        <div class="InputLine-Label">
+                            <label>Region: </label>
+                        </div>
+                        <div class="InputLine-Input">
+                            <b>@contact.Info.InvoiceAddress.region</b>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="InputPanel-Actions">
+                <div class="InputPanel-Actions-Buttons">
+                    <button class="btn waves-effect waves-light blue" @onclick="@(() => OnChange.InvokeAsync("Change"))">Change<i class="material-icons right">sync</i></button>
+                    <button class="btn waves-effect waves-light red" @onclick="@(() => OnDelete.InvokeAsync(contact))">Delete<i class="material-icons right">delete_forever</i></button>
+                </div>
+            </div>
+        }
+

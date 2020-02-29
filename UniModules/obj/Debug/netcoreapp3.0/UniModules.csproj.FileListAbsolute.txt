@@ -1,0 +1,7 @@
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\UniModules\bin\Debug\netcoreapp3.0\UniModules.deps.json
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\UniModules\bin\Debug\netcoreapp3.0\UniModules.dll
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\UniModules\bin\Debug\netcoreapp3.0\UniModules.pdb
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\UniModules\obj\Debug\netcoreapp3.0\UniModules.AssemblyInfoInputs.cache
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\UniModules\obj\Debug\netcoreapp3.0\UniModules.AssemblyInfo.cs
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\UniModules\obj\Debug\netcoreapp3.0\UniModules.dll
+Y:\Prosjekter\006 - UniEconomy Contacts\UniEconomy Contacts\UniModules\obj\Debug\netcoreapp3.0\UniModules.pdb

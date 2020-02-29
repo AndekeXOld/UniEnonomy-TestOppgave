@@ -1,0 +1,41 @@
+﻿@code {
+    [Parameter]
+    public UniModules.Contact SelectedContact { get; set; } = new UniModules.Contact();
+    
+    [Parameter]
+    public string Action { get; set; } = "View"; //Enum?
+
+    [Parameter]
+    public EventCallback<UniModules.Contact> OnChangeContact { get; set; }
+
+    [Parameter]
+    public EventCallback<UniModules.Contact> OnDeleteContact { get; set; }
+
+    [Parameter]
+    public EventCallback<UniModules.Contact> OnNewContact { get; set; }
+
+
+    void SetAction(string Arg_Action)
+    {
+        Action = Arg_Action;
+    }
+}
+
+    <div class="z-depth-3 ActionPanel" style="padding:10px; padding-left:20px; height:700px; width:100%">
+
+        <div style="height: 40px; font-size:20px;"><b>@Action Contact</b></div>
+        <hr />
+
+        @if (Action == "View")
+        {
+            <ViewContact contact="SelectedContact" OnChange="SetAction" OnDelete="OnDeleteContact"></ViewContact>
+        }
+        else if (Action == "New")
+        {
+            <SubmitContact OnSubmit="OnNewContact" OnCancel="SetAction"></SubmitContact>
+        }
+        else if (Action == "Change")
+        {
+            <SubmitContact contact="SelectedContact" OnSubmit="OnChangeContact" OnCancel="SetAction"></SubmitContact>
+        }
+    </div>

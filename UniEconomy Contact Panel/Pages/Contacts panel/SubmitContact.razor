@@ -1,0 +1,205 @@
+﻿@code{
+    [Parameter]
+    public UniModules.Contact contact { get; set; } = new UniModules.Contact();
+
+    [Parameter]
+    public EventCallback<UniModules.Contact> OnSubmit { get; set; }
+
+    [Parameter]
+    public EventCallback<string> OnCancel { get; set; }
+
+    void Submit()
+    {
+        try
+        {
+            OnSubmit.InvokeAsync(contact);
+        }
+        catch
+        {
+            //Om det bare var nok tid i verden til feilhådtering og validering. hehe
+        }
+    }
+
+    void Cancel()
+    {
+        OnCancel.InvokeAsync("View");
+    }
+}
+
+
+<EditForm Model="@contact" OnValidSubmit="@Submit">
+    <div class="InputPanel">
+        <div class="InputSection">
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                </div>
+                <div class="InputLine-Input">
+                    <h5>Person info</h5>
+                </div>
+            </div>
+
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Name: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="Name" @bind-Value="contact.Info.Name" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Role: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="Role" @bind-Value="contact.Role" />
+                </div>
+            </div>
+        </div>
+
+        <div class="InputSection">
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                </div>
+                <div class="InputLine-Input">
+                    <h5>Contact Info</h5>
+                </div>
+            </div>
+
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Email: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="EmailAddress" @bind-Value="contact.Info.DefaultEmail.EmailAddress" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Description: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="EmailDescription" @bind-Value="contact.Info.DefaultEmail.Description" />
+                </div>
+            </div>
+        </div>
+
+        <div class="InputSection">
+            <br>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Phone number: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="PhoneNumber" @bind-Value="contact.Info.DefaultPhone.Number" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Country Code: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="CountryCode" @bind-Value="contact.Info.DefaultPhone.CountryCode" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Description: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="NumberDescription" @bind-Value="contact.Info.DefaultPhone.Description" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="InputPanel">
+        <div class="InputSection">
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                </div>
+                <div class="InputLine-Input">
+                    <h5>Invoice Addresse</h5>
+                </div>
+            </div>
+
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Address Line 1: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="AddressLine1" @bind-Value="contact.Info.InvoiceAddress.AddressLine1" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Address Line 2: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="AddressLine2" @bind-Value="contact.Info.InvoiceAddress.AddressLine2" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Address Line 3: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="AddressLine3" @bind-Value="contact.Info.InvoiceAddress.AddressLine3" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Postal Code: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="PostalCode" @bind-Value="contact.Info.InvoiceAddress.PostalCode" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>City: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="City" @bind-Value="contact.Info.InvoiceAddress.City" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Country: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="Country" @bind-Value="contact.Info.InvoiceAddress.Country" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Country Code: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="CountryCode" @bind-Value="contact.Info.InvoiceAddress.CountryCode" />
+                </div>
+            </div>
+            <div class="InputLine">
+                <div class="InputLine-Label">
+                    <label>Region: </label>
+                </div>
+                <div class="InputLine-Input">
+                    <InputText id="region" @bind-Value="contact.Info.InvoiceAddress.region" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="InputPanel-Actions">
+        <div class="InputPanel-Actions-Buttons">
+            <button class="btn waves-effect waves-light green" type="submit">
+                Submit
+                <i class="material-icons right">send</i>
+            </button>
+            <button class="btn waves-effect waves-light red" type="reset" @onclick="Cancel">
+                Cancel
+                <i class="material-icons right">cancel</i>
+            </button>
+        </div>
+    </div>
+    <ValidationSummary />
+</EditForm>
